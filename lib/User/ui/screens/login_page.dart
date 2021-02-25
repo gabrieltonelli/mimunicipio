@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mi.municipio/widgets/logo.dart';
 import 'package:mi.municipio/widgets/buttons.dart';
+import 'package:mi.municipio/User/bloc/login_state.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   final Function onLoginSuccess;
@@ -51,12 +53,21 @@ class LoginPage extends StatelessWidget {
                   FloatingActionButton(
                       child: Icon(FontAwesomeIcons.google),
                       onPressed: () {
-                        onLoginSuccess();
+                        Provider.of<LoginState>(context)
+                            .login(LoginProvider.GOOGLE);
                       }),
                   FloatingActionButton(
-                      child: Icon(FontAwesomeIcons.facebook), onPressed: () {}),
+                      child: Icon(FontAwesomeIcons.facebook),
+                      onPressed: () {
+                        Provider.of<LoginState>(context)
+                            .login(LoginProvider.FACEBOOK);
+                      }),
                   FloatingActionButton(
-                      child: Icon(FontAwesomeIcons.twitter), onPressed: () {})
+                      child: Icon(FontAwesomeIcons.twitter),
+                      onPressed: () {
+                        Provider.of<LoginState>(context)
+                            .login(LoginProvider.TWITTER);
+                      })
                 ],
               ),
             ),

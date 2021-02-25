@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "990027961174",
+    "project_id": "mimunicipio-15d4d",
+    "storage_bucket": "mimunicipio-15d4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990027961174:android:6d61a6de592a33f28fbcf7",
+        "android_client_info": {
+          "package_name": "app.mi.municipio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990027961174-np5th8dou5mr7dq2gfj05uaoqpf1i4hm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.mi.municipio",
+            "certificate_hash": "ba28838cbdab357141bd339f1c74b1f85ffacbc3"
+          }
+        },
+        {
+          "client_id": "990027961174-mtgmlseoipfeug5d6ni802k3trk38dtr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC48-ddDnaTQXBL2ApKkjZd-Jj_W55LqeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990027961174-mtgmlseoipfeug5d6ni802k3trk38dtr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

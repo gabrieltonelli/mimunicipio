@@ -18,19 +18,22 @@ dependencies:
   #google_maps_flutter: ^0.5.11+1
   #location: ^2.3.5   #lo uso para obtener mas facil la locación actual ya que con geolocator me resultó mas complicado
   #geolocator: ^5.3.0 #lo uso para calcular cercania ya que con location no se como es
-  #http: ^0.12.0
-  #bubble: ^1.1.0
-  #percent_indicator: ^2.1.1
-  #image_picker: ^0.6.2+3
-  #flutter_open_whatsapp: ^0.1.2
+  http: ^0.12.0
+  bubble: ^1.1.0
+  percent_indicator: ^2.1.1
+  image_picker: ^0.6.2+3
+  flutter_open_whatsapp: ^0.1.2
   font_awesome_flutter: ^8.11.0
-  #firebase_auth: ^0.20.0+1
-  #google_sign_in: ^4.5.9
-  #firebase_storage: ^2.1.0
-  #cloud_firestore: ^0.9.13
-  #generic_bloc_provider: ^1.1.0
-  #flutter_facebook_login: ^3.0.0
-  #provider: ^4.3.3
+  firebase_auth: ^0.20.0+1
+  google_sign_in: ^4.5.9
+  firebase_storage: ^7.0.0
+  cloud_firestore: ^0.16.0+1
+  generic_bloc_provider: ^1.1.0
+  firebase_core: ^0.7.0
+  flutter_facebook_auth: ^1.0.0 
+  flutter_barcode_scanner: ^1.0.2
+  flutter_facebook_login: ^3.0.0
+  provider: ^2.0.1
 
 flutter_icons:
   android: true
