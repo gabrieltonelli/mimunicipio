@@ -20,7 +20,7 @@ class _MyBottomNavigationBar extends State<MyBottomNavigationBar> {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.library_books),
-          label: 'Tareas',
+          label: 'Tareass',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.adjust_outlined),
