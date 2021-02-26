@@ -19,7 +19,7 @@ class _MyBottomNavigationBar extends State<MyBottomNavigationBar> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.add_location),
-            label: 'Checkpointt',
+            label: 'Checkpoint',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.qr_code_scanner),
