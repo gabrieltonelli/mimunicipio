@@ -1,6 +1,10 @@
+import 'dart:async';
+import 'package:flutter/cupertino.dart';
+import 'package:mi.municipio/System/model/globals.dart' as globals;
 import 'package:flutter/material.dart';
 import 'package:mi.municipio/widgets/scan.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:webview_flutter/webview_flutter.dart' ;
 
 class MyBottomNavigationBar extends StatefulWidget {
   MyBottomNavigationBar();
@@ -9,10 +13,15 @@ class MyBottomNavigationBar extends StatefulWidget {
 
 class _MyBottomNavigationBar extends State<MyBottomNavigationBar> {
   int _currentIndex = 0;
-
+  String _url="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: WebView(
+        
+        initialUrl: '$_url',
+        javascriptMode: JavascriptMode.unrestricted,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped, // new
         currentIndex: _currentIndex,
@@ -33,7 +42,6 @@ class _MyBottomNavigationBar extends State<MyBottomNavigationBar> {
       ),
     );
   }
-
   Future onTabTapped(int index) async {
     setState(() {
       _currentIndex = index;
@@ -52,16 +60,20 @@ class _MyBottomNavigationBar extends State<MyBottomNavigationBar> {
         Scan();
         break;
     }
+    print("aca2");
+    print(_url);
   }
-
-  Future<void> scanQR() async {
+  Future<String> scanQR() async {
     String barcodeScanRes;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-
     barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
         "#ff6666", "Cancel", true, ScanMode.QR);
-    print(barcodeScanRes);
+    globals.res = barcodeScanRes;
 
-    if (!mounted) return;
+    setState(() {
+      _url = barcodeScanRes;
+    });
+    return barcodeScanRes;
   }
+
+
 }

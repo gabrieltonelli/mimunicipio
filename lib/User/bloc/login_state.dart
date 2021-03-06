@@ -15,6 +15,7 @@ class LoginState with ChangeNotifier {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FacebookLogin facebookLogin = FacebookLogin();
+  
   User _user;
   bool _loggedin = false;
   bool isLoggedIn() => _loggedin;
@@ -33,11 +34,6 @@ class LoginState with ChangeNotifier {
     }
   }
 
-  void logout() {
-    _loggedin = false;
-    notifyListeners();
-  }
-
   Future<String> signInWithGoogle() async {
     await Firebase.initializeApp();
     final GoogleSignInAccount googleSignInAccount =
@@ -53,7 +49,6 @@ class LoginState with ChangeNotifier {
     final UserCredential authResult =
         await _auth.signInWithCredential(credential);
     final User user = authResult.user;
-
     if (user != null) {
       assert(!user.isAnonymous);
       assert(await user.getIdToken() != null);
@@ -61,10 +56,15 @@ class LoginState with ChangeNotifier {
       assert(user.uid == currentUser.uid);
       _loggedin = true;
       notifyListeners();
-      //print('Ingreso: $user');
+      print('Ingreso: $user');
       return '$user';
     }
     return null;
+  }
+
+  void logout() {
+    _loggedin = false;
+    notifyListeners();
   }
 
   Future<void> signOutGoogle() async {
